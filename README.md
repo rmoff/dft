@@ -10,4 +10,4 @@ The template and conf include settings to load the geo data into geo-point Elast
 
 Alternatively, run the R script to join the data and load it directly into Elasticsearch from R.
 
-More info: rmoff.net/2016/04/24/denormalising-data-for-analysis-in-kibana/
+More info: [rmoff.net/2016/04/24/denormalising-data-for-analysis-in-kibana/](http://rmoff.net/2016/04/24/denormalising-data-for-analysis-in-kibana/)

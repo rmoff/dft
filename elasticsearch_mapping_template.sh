@@ -1,4 +1,4 @@
-curl -XPUT "http://localhost:9200/_template/dftroadsafetyaccidents" -d'
+curl -XPUT "http://localhost:9200/_template/dftroadsafetyaccidents" -d' 
 {
   "template": "dftroadsafetyaccidents*",
   "settings": {
@@ -13,12 +13,20 @@ curl -XPUT "http://localhost:9200/_template/dftroadsafetyaccidents" -d'
             "mapping": {
               "index": "not_analyzed",
               "omit_norms": true,
-              "type": "string"
+              "type": "string",
+              "fields": {
+                "analyzed": {
+                  "type": "string",
+                  "index": "analyzed",
+                  "omit_norms": true
+                }
+              }
             },
             "match_mapping_type": "string",
             "match": "*"
           }
-          } , {
+        },
+        {
           "timestamp_field": {
             "mapping": {
               "type": "date",
@@ -32,10 +40,10 @@ curl -XPUT "http://localhost:9200/_template/dftroadsafetyaccidents" -d'
         "enabled": true
       },
       "properties": {
-        "location": { "type": "geo_point" }
-
+        "location": {
+          "type": "geo_point"
+        }
       }
     }
   }
-}
-'
+}'
